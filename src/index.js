@@ -58,8 +58,8 @@ module.exports = function multiply(first, second) {
   }
 
   //console.log(result);
-
-  for (let index = 0; index < resArrayLength-1; index++) {
+   mind = 0;
+  for (let index = 0; index < resArrayLength; index++) {
     sum =0;
     for (const i of result) {
       sum = sum + i.shift();
@@ -68,9 +68,9 @@ module.exports = function multiply(first, second) {
     mind = toMind(sum+mind);
     //console.log(mind);
   }
-  //sumArray.push(takeLastDigit(sum+mind));
+  console.log(mind);
 
-  //console.log('--------------------');
+  console.log(result);
   //console.log(' ',sumArray);
   //console.log('-----------------');
   //console.log(sumArray);
@@ -90,6 +90,9 @@ module.exports = function multiply(first, second) {
   //for (let i = 0; i < result.length; i++) {
   //  result[i] = result[i].reverse();
   //};
-  
-  return sumArray.reverse().join('');
+  let str = sumArray.reverse().join('');
+  if (str[0] == '0') {
+    return str.slice(1);
+  };
+  return str;
 }
